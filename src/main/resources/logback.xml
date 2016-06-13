@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- logs to console -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d %5p %t %-55logger{55} %m %n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="com.netflix" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="se.panok.spike" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="console" />
+	</logger>
+
+	<root level="info" />
+</configuration>
