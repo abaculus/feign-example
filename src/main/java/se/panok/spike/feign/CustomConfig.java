@@ -2,12 +2,15 @@ package se.panok.spike.feign;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import feign.Response;
 import feign.RetryableException;
 import feign.Retryer;
+import feign.codec.ErrorDecoder;
 import se.panok.spike.RibbonConfig;
 
 @Configuration
@@ -23,7 +26,7 @@ public class CustomConfig {
 	 */
 	@Bean
 	public Retryer retryer() {
-		logger.info("Creating custom Retryer.");
+		logger.info("\r\n\r\n\tCreating custom Retryer.\r\n\r\n");
 		return new Retryer() {
 
 			@Override
